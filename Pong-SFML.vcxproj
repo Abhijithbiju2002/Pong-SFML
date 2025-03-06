@@ -133,6 +133,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Core\main.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Source\Core\GameWindowManager.cpp" />
   </ItemGroup>
