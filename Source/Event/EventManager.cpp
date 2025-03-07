@@ -1,6 +1,6 @@
 #include "../../Header/Event/EventManager.h"
 
-namespace Event {
+namespace Events {
 
 
 	void EventManager::pollEvents(RenderWindow* game_window) {
@@ -16,10 +16,7 @@ namespace Event {
 				game_window->close();
 			}
 
-
-
 		}
-
 
 	}
 
