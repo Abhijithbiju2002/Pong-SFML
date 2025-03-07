@@ -10,9 +10,9 @@ namespace Core {
 	}
 	void GameWindowManager::createGameWindow() {
 		// Create the window with specified dimensions and title
-		game_window->create(
-			sf::VideoMode::getDesktopMode();// Get screen resolution
-			game_title    // Window title
+		game_window-> create(
+			sf::VideoMode::getDesktopMode(),// Get screen resolution
+			game_title ,   // Window title
 		    sf::Style::Fullscreen   // Fullscreen mode
 		);
 		
