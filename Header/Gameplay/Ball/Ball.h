@@ -1,18 +1,34 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include"../../Header/Gameplay/Paddle/Paddle.h"
 using namespace sf;
+using namespace std;
 
 namespace Gameplay {
 
-	class Ball {
+	class Ball
+	{
 	private:
-		CircleShape ball_sprite;
-		const float radius = 10.0f;
+
+		Texture pong_ball_texture;
+		const string texture_path = "Assets/Textures/Ball.png";
+		Sprite pong_ball_sprite;
+
+	
+
+		const float scale_x = 0.06f;
+		const float scale_y = 0.06f;
+
 		const float position_x = 615.0f;
-		const float position_y = 335.0f;
+		const float position_y = 325.0f;
+
+		void loadTexture();
+		void initializeVariables();
 
 	public:
+
 		Ball();
+
 		void update();
 		void render(RenderWindow* game_window);
 	};
