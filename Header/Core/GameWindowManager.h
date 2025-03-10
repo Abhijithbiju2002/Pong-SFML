@@ -12,12 +12,16 @@ namespace Core {
 
 		RenderWindow* game_window;
 		void createGameWindow();
+		
 
 	public:
 		void initialize();
 		RenderWindow* getGameWindow();
 		bool isGameRunning();
 		void render();
+
+		void clearGameWindow();
+		void displayGameWindow();
 	};
 
 }

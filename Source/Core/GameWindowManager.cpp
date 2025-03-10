@@ -21,14 +21,18 @@ namespace Core {
 		// Return true if window is open, false if closed
 		return game_window->isOpen();
 	}
-	void GameWindowManager::render() {
+	void GameWindowManager::clearGameWindow() {
+
 		// Clear window with orange color (R:200, G:50, B:50, A:255)
-		game_window->clear(sf::Color(200, 50, 50, 255));
+		game_window->clear();
 		//draw shapes, sprites, etc 
+	}
+	void GameWindowManager::displayGameWindow() {
 
 		// Display the changes
 		game_window->display();
 	}
+	
 	RenderWindow* GameWindowManager::getGameWindow() {
 		return game_window;
 	}
