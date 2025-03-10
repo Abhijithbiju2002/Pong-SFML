@@ -17,7 +17,7 @@ int main() {
 	while (game_loop_manager->isGameRunning())
 	{
 		game_loop_manager->pollEvent();
-		game_loop_manager->Update();
+		game_loop_manager->update();
 		game_loop_manager->render();
 	}
 	
