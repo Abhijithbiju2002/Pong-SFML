@@ -1,6 +1,7 @@
 #include "../../Header/Gameplay/GameplayManager.h"
 
 
+using namespace sf;
 using namespace Gameplay;
 
 namespace Gameplay {
@@ -20,7 +21,7 @@ namespace Gameplay {
 	}
 	void GameplayManager::update() {
 		
-			ball->update();  // Call Ball's update function
+		    ball->update(player1,player2);  // Call Ball's update function
 
 			player1->update(event_manager->isKeyPressed(Keyboard::W),
 				event_manager->isKeyPressed(Keyboard::S));
