@@ -2,6 +2,13 @@
 
 namespace Gameplay {
 
+	Boundary::Boundary()
+	{
+		createTopBoundary();
+		createLeftBoundary();
+		createCenterLine();
+	}
+
 	void Boundary::createLeftBoundary() {
 		leftBoundary.setSize(Vector2f(vertical_boundary_width, vertical_boundary_height));
 		leftBoundary.setPosition(left_position_x, left_position_y);
