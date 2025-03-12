@@ -142,6 +142,7 @@
     <ClCompile Include="Source\Gameplay\Boundary\Boundary.cpp" />
     <ClCompile Include="Source\Gameplay\GameplayManager.cpp" />
     <ClCompile Include="Source\Gameplay\Paddle\Paddle.cpp" />
+    <ClCompile Include="Source\Gameplay\Utility\TimeService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Core\GameLoop.h" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Header\Gameplay\Boundary\Boundary.h" />
     <ClInclude Include="Header\Gameplay\GameplayManager.h" />
     <ClInclude Include="Header\Gameplay\Paddle\Paddle.h" />
+    <ClInclude Include="Header\Gameplay\Utility\TimeService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,4 +1,5 @@
-#pragma once#include <SFML/Graphics.hpp>
+#pragma once
+#include <SFML/Graphics.hpp>
 using namespace sf;
 
 namespace Gameplay

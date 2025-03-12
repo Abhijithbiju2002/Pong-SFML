@@ -1,5 +1,6 @@
 #include "../../Header/Gameplay/Boundary/Boundary.h"
 
+
 namespace Gameplay {
 
 	Boundary::Boundary()

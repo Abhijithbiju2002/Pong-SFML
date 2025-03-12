@@ -25,13 +25,13 @@ namespace Gameplay {
 		
 		    time_service->update();
 
-		    ball->update(player1,player2);  // Call Ball's update function
+		    ball->update(player1,player2 ,time_service);  // Call Ball's update function
 
 			player1->update(event_manager->isKeyPressed(Keyboard::W),
-				event_manager->isKeyPressed(Keyboard::S));
+				event_manager->isKeyPressed(Keyboard::S), time_service);
 
 			player2->update(event_manager->isKeyPressed(Keyboard::Up),
-				event_manager->isKeyPressed(Keyboard::Down));
+				event_manager->isKeyPressed(Keyboard::Down), time_service);
 
 	
 	}

@@ -32,10 +32,14 @@ namespace Gameplay {
         pong_ball_sprite.setTexture(pong_ball_texture);  // Link texture to sprite
         pong_ball_sprite.setScale(scale_x, scale_y);     // Set size
         pong_ball_sprite.setPosition(position_x, position_y); // Set position
+
+        current_state = BallState::Idle;
     }
     void Ball::move(TimeService* time_service) {
-        float speed_multiplier = 10;
 
+        updateDelayTime(time_service->getDeltaTime());
+
+        float speed_multiplier = 10;
         pong_ball_sprite.move(velocity * time_service->getDeltaTime() * speed_multiplier);
     }
     void Ball::update(Paddle* player1, Paddle* player2, TimeService* time_service) {
@@ -93,5 +97,20 @@ namespace Gameplay {
     {
         pong_ball_sprite.setPosition(center_position_x, center_position_y);
         velocity = Vector2f(ball_speed, ball_speed);
+    }
+    void Ball::updateDelayTime(float deltaTime)
+    {
+        if (current_state == BallState::Idle)
+        {
+            elapsed_delay_time += deltaTime;
+            if (elapsed_delay_time >= delay_duration)
+            {
+                current_state = BallState::Moving;
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 }
