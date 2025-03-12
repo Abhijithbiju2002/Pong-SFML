@@ -1,5 +1,4 @@
-#pragma once
-#include <SFML/Graphics.hpp>
+#pragma once#include <SFML/Graphics.hpp>
 using namespace sf;
 
 namespace Gameplay
@@ -46,7 +45,7 @@ namespace Gameplay
         //Boundary Colors
         const Color boundary_color = Color::Blue;
         const Color center_line_color = Color::White;
-
+    
         //create boundaries and the center line
         void createTopBoundary();
         void createBottomBoundary();
