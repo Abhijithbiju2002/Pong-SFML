@@ -9,6 +9,7 @@ namespace UI {
 	private:
 		Font font;
 		Text left_score_text;
+		Text right_score_text;
 
 		string texture_path = "Assets/Fonts/Aloevera-OVoWO.ttf";
 
@@ -23,10 +24,15 @@ namespace UI {
 		float right_score_position_y = 30.0f;
 
 		int player1_score = 0;
+		int player2_score = 0;
 		
 	public:
 
 		void render(RenderWindow* game_window);
+		string formatScore(int score);
+		void incrementPlayer1Score();
+		void incrementPlayer2Score();
+		void update();
 		void loadFontTexture();
 		void createLeftScoreText();
 	};
