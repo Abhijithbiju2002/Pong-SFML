@@ -8,7 +8,9 @@ namespace Gameplay {
 
 	GameplayManager::GameplayManager(EventManager* manager) {
 
-		
+		time_service = new TimeService();
+		time_service->initialize();// Start our time tracking
+
 		event_manager = manager;
 		boundary = new Boundary();
 	}
@@ -21,6 +23,8 @@ namespace Gameplay {
 	}
 	void GameplayManager::update() {
 		
+		    time_service->update();
+
 		    ball->update(player1,player2);  // Call Ball's update function
 
 			player1->update(event_manager->isKeyPressed(Keyboard::W),

@@ -33,13 +33,14 @@ namespace Gameplay {
         pong_ball_sprite.setScale(scale_x, scale_y);     // Set size
         pong_ball_sprite.setPosition(position_x, position_y); // Set position
     }
-    void Ball::move() {
+    void Ball::move(TimeService* time_service) {
+        float speed_multiplier = 10;
 
-        pong_ball_sprite.move(velocity);
+        pong_ball_sprite.move(velocity * time_service->getDeltaTime() * speed_multiplier);
     }
-    void Ball::update(Paddle* player1, Paddle* player2) {
+    void Ball::update(Paddle* player1, Paddle* player2, TimeService* time_service) {
 
-        move();
+        move(time_service);
         onCollision(player1, player2);
     }
     void Ball::handlePaddleCollision(Paddle* player1, Paddle* player2) {

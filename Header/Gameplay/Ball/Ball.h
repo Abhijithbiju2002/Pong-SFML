@@ -1,11 +1,19 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "../../Header/Gameplay/Paddle/Paddle.h"
+#include"../../Header/Gameplay/Utility/TimeService.h"
+
 using namespace sf;
 using namespace std;
+using namespace Utility;
 
 namespace Gameplay
 {
+    enum class BallState
+    {
+        Idle,
+        Moving
+    };
     class Ball
     {
     private:
@@ -13,12 +21,18 @@ namespace Gameplay
         Texture pong_ball_texture;
         const string texture_path = "Assets/Textures/Ball.png";
 
+        float delay_duration = 2.0f;
+        float elapsed_delay_time = 0.0f;
+
+        BallState current_state;
+
         Sprite pong_ball_sprite;
 
         float ball_speed = 0.5f;
         Vector2f velocity = Vector2f(ball_speed, ball_speed);
 
-        void move();
+        void move(TimeService* time_service);
+        void updateDelayTime(float deltaTime);
 
         const float scale_x = 0.2f;
         const float scale_y = 0.2f;
@@ -35,7 +49,7 @@ namespace Gameplay
 
         Ball();
 
-        void update(Paddle* player1, Paddle* player2);
+        void update(Paddle* player1, Paddle* player2, TimeService* time_service);
         void render(RenderWindow* game_window);
 
         void handlePaddleCollision(Paddle* player1, Paddle* player2);
