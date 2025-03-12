@@ -40,7 +40,8 @@ namespace Gameplay
         const float position_x = 615.0f;
         const float position_y = 325.0f;
 
-       
+        bool had_left_collison = false;
+        bool had_right_collison = false;
 
         void loadTexture();
         void initializeVariables();
@@ -57,6 +58,12 @@ namespace Gameplay
         void reset();
         void onCollision(Paddle* player1, Paddle* player2);
         void handleBoudaryCollision();
+
+        bool isLeftCollisionOccurred();
+        void updateLeftCollisionState(bool value);
+
+        bool isRightCollisionOccurred();
+        void updateRightCollisionState(bool value);
 
         const float top_boundary = 20.0f;
         const float bottom_boundary = 700.0f;

@@ -38,6 +38,8 @@ namespace Gameplay
 		GameplayManager(EventManager* manager);
 		void update();
 		void render(RenderWindow* game_window);
+		void UpdateScore();
+		void resetPlayers();
 		UIService* ui_service = new UIService;
 	};
 }

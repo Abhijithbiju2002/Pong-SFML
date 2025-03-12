@@ -24,6 +24,7 @@ namespace Gameplay {
 	}
 	void GameplayManager::update() {
 		
+		    UpdateScore();
 		    time_service->update();
 
 		    ball->update(player1,player2 ,time_service);  // Call Ball's update function
@@ -44,6 +45,25 @@ namespace Gameplay {
 		player1->render(game_window);
 		player2->render(game_window);
 		ui_service->render(game_window);
+	}
+	void GameplayManager::UpdateScore() {
+		// Left side out - Player 2 scores!
+		if (ball->isLeftCollisionOccurred()) {
+			ui_service->incrementPlayer2Score();
+			ball->updateLeftCollisionState(false);
+			resetPlayers();  // You'll implement it next
+		}
+
+		// Right side out - Player 1 scores!
+		if (ball->isRightCollisionOccurred()) {
+			ui_service->incrementPlayer1Score();
+			ball->updateRightCollisionState(false);
+			resetPlayers();  // You'll implement it next
+		}
+	}
+	void GameplayManager::resetPlayers() {
+		player1->reset(player1_position_x, player1_position_y);
+		player2->reset(player2_postion_x, player2_postion_y);
 	}
 
 }
