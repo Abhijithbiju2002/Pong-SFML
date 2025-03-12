@@ -4,8 +4,9 @@
 #include "../../Header/Event/EventManager.h"
 #include "Boundary/Boundary.h"
 #include"../../Header/Gameplay/Utility/TimeService.h"
+#include"../../Header/UI/UIService.h"
 
-
+using namespace UI;
 using namespace Events;
 using namespace Gameplay;
 using namespace Utility;
@@ -27,6 +28,7 @@ namespace Gameplay
 		Paddle* player1;
 		Paddle* player2;
 		TimeService* time_service;
+		
 
 		void initialize();
 		EventManager* event_manager;
@@ -36,5 +38,6 @@ namespace Gameplay
 		GameplayManager(EventManager* manager);
 		void update();
 		void render(RenderWindow* game_window);
+		UIService* ui_service = new UIService;
 	};
 }
