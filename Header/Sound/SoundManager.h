@@ -3,8 +3,6 @@
 #include <string>
 
 
-
-
 namespace Sound {
 	enum class SoundType {
 		BALL_BOUNCE
