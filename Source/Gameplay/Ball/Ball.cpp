@@ -60,7 +60,7 @@ namespace Gameplay {
         // 3. Handle collisions
         if (ball_bounds.intersects(player1_bounds) && velocity.x < 0) {
             velocity.x = -velocity.x;  // Bounce!
-
+            SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
         }
         if (ball_bounds.intersects(player2_bounds) && velocity.x > 0)
         {
@@ -72,10 +72,10 @@ namespace Gameplay {
     {
         FloatRect ball_bounds = pong_ball_sprite.getGlobalBounds();
       
-        if ((ball_bounds.top <= top_boundary && velocity.y < 0) ||
-            (ball_bounds.top + ball_bounds.height >= bottom_boundary && velocity.y > 0))
+        if (ball_bounds.top <= top_boundary || ball_bounds.top + ball_bounds.height >= bottom_boundary)
         {
             velocity.y = -velocity.y;  // Reverse vertical direction
+            SoundManager::PlaySoundEffect(SoundType::BALL_BOUNCE);
         }
     }
     void Ball::handleOutofBoundCollision()

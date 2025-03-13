@@ -143,6 +143,7 @@
     <ClCompile Include="Source\Gameplay\GameplayManager.cpp" />
     <ClCompile Include="Source\Gameplay\Paddle\Paddle.cpp" />
     <ClCompile Include="Source\Gameplay\Utility\TimeService.cpp" />
+    <ClCompile Include="Source\Sound\SoundManager.cpp" />
     <ClCompile Include="Source\UI\UIService.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="Header\Gameplay\GameplayManager.h" />
     <ClInclude Include="Header\Gameplay\Paddle\Paddle.h" />
     <ClInclude Include="Header\Gameplay\Utility\TimeService.h" />
+    <ClInclude Include="Header\Sound\SoundManager.h" />
     <ClInclude Include="Header\UI\UIService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

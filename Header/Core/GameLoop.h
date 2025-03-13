@@ -4,12 +4,15 @@
 #include "../../Header/Core/GameWindowManager.h"
 #include "../../Header/Event/EventManager.h"
 #include "../../Header/Gameplay/GameplayManager.h"
+#include "../../Header/Sound/SoundManager.h"
+
 
 using namespace sf;
 using namespace Core;
 using namespace Events;
 using namespace std;
 using namespace Gameplay;
+using namespace Sound;
 
 
 namespace Core
